@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://xxx:3306/studentManagement?serverTimezone=GMT%2B8&useSSL=true
+    password: xxx
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: xxx
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+server:
+  port: 8081
+
