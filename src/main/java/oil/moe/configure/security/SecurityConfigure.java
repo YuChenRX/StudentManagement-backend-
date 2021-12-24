@@ -22,25 +22,27 @@ public class SecurityConfigure extends WebSecurityConfigurerAdapter {
 //    Can't configure antMatchers after anyRequest
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/test")
-                .hasAnyRole("USER")
-                .antMatchers("/login","/swagger-ui/**")
+
+                .antMatchers("/**")
                 .permitAll()
+
                 .and()
                 .formLogin()
                 .successHandler(new LoginSuccessHandle())
+//                .failureHandler(new SecurityExceptionDefault())
                 .and()
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated()
-                .and()
+//                .authorizeRequests()
+//                .anyRequest()
+//                .authenticated()
+//                .and()
                 .csrf().disable()
                 .rememberMe().
-                //user 的服务 源(该对象spring中存在了,注入即可)
+                //user 的服务 源(该对象spring中存在了,注入即可)-
                         userDetailsService(userDetailsService).
                 //这是上面创建的对象
                         tokenRepository(persistentTokenRepository);
     }
+
 
     @Override
     public void configure(WebSecurity web) {
@@ -52,4 +54,6 @@ public class SecurityConfigure extends WebSecurityConfigurerAdapter {
                 .antMatchers("/html/**")
                 .antMatchers("/js/**");
     }
+
+
 }

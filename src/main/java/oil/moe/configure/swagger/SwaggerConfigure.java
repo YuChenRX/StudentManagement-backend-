@@ -29,9 +29,9 @@ public class SwaggerConfigure {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("=-=")
-                .description("=-=")
-                .contact(new Contact("GuXianWN","http:localhost:8081/doc.html","2818958193@qq.com"))
+                .title("学生管理系统")
+                .description("nothing ！")
+                .contact(new Contact("GuXianWN","http:localhost:8081/swagger/index.html","2818958193@qq.com"))
                 .version("1.0")
                 .build();
     }

@@ -1,10 +1,18 @@
 package oil.moe;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.nio.charset.StandardCharsets;
 
+@SpringBootTest
 public class OtherTest {
+
+    @Autowired
+    PasswordEncoder pe;
+
     @Test
     public int t(byte[] value) {
         int h = 0;
@@ -17,5 +25,10 @@ public class OtherTest {
     @Test
     public void doe(){
         System.out.println(t("Taramasalata".getBytes(StandardCharsets.UTF_8)));
+    }
+
+    @Test
+    public void encode(){
+        System.out.println(pe.encode("123456"));
     }
 }

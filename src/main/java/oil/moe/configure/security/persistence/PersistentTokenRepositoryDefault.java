@@ -1,4 +1,4 @@
-package oil.moe.configure.security.db;
+package oil.moe.configure.security.persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;

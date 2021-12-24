@@ -25,7 +25,7 @@ public class Student {
     @JoinColumn(name = "id")
     StudentScore score;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     List<Teacher> teacherList;
 
 

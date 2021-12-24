@@ -17,23 +17,17 @@ import java.util.List;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long tId;
+    Long teacherId;
     @Column
     String teacherName;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.ALL})
     List<Student> students;
-
-    @Column
-    String username;
-    @Column
-    String password;
-
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "tId=" + tId +
+                "tId=" + teacherId +
                 ", teacherName='" + teacherName + '\'' +
                 '}';
     }

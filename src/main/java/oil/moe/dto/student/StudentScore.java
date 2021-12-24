@@ -20,6 +20,7 @@ public class StudentScore {
 
     @Column
     Double math;
+
     @Column
     Double java;
     @Column
