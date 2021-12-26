@@ -1,9 +1,10 @@
 package oil.moe.dto.teacher;
 
-import oil.moe.dto.student.Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import oil.moe.dto.student.Student;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,17 +18,18 @@ import java.util.List;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long teacherId;
+    Long id;
     @Column
     String teacherName;
 
+    @JsonIgnore
     @ManyToMany(cascade = {CascadeType.ALL})
     List<Student> students;
 
     @Override
     public String toString() {
         return "Teacher{" +
-                "tId=" + teacherId +
+                "tId=" + id +
                 ", teacherName='" + teacherName + '\'' +
                 '}';
     }

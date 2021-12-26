@@ -5,17 +5,17 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username:
 
+
   jpa:
+#    open-in-view: false
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     generate-ddl: true
     hibernate:
       ddl-auto: update
-    show-sql: true
     database: mysql
-
+    show-sql: true
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
 server:
   port: 8081
-

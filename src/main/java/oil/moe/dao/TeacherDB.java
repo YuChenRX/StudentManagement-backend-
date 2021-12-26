@@ -5,5 +5,5 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface TeacherDB extends PagingAndSortingRepository<Teacher,Long> {
 
-    Teacher deleteByTeacherId(Long id);
+    Teacher deleteAllById(Long id);
 }

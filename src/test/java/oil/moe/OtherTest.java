@@ -31,4 +31,8 @@ public class OtherTest {
     public void encode(){
         System.out.println(pe.encode("123456"));
     }
+    @Test
+    public void num(){
+        System.out.println(2<<1);
+    }
 }

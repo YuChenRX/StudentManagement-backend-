@@ -15,19 +15,16 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BaseLoginInfo {
+public class User {
 
     @Id
-    @GeneratedValue
-    Long id;
-
     @Column
-    @Length(min = 2, max = 40)
+    @Length(min = 1, max = 40)
     @NotEmpty(message = "username can't null !")
     String username;
 
     @Column
-    @Length(min = 2)
+    @Length(min = 1)
     @NotEmpty(message = "password can't null !")
     String password;
 

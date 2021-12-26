@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("oil.moe.*")
+
 public class StudentManagementApplication {
 
     public static void main(String[] args) {

@@ -8,6 +8,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface StudentDB extends PagingAndSortingRepository<Student, Long> {
     Page<Student> findAll(Pageable pageable);
-    Student deleteByStudentId(Long id);
+    Student deleteAllById(Long id);
+
 }
 

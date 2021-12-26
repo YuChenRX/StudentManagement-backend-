@@ -1,15 +1,18 @@
 package oil.moe.service.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
+
 import java.util.List;
 
 public interface BaseController<T> {
     T getById(Long id);
 
-    List<T> getAll();
+    List<T> getAll(int beginPage,int endPage);
 
-    boolean add(T t);
+    T add(T t);
 
-    boolean delete(T t);
 
-    boolean deleteById(Long id);
+    T deleteById(Long id);
+
+    T modify(T t, @PathVariable Long id);
 }

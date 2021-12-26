@@ -4,7 +4,7 @@ import lombok.extern.log4j.Log4j2;
 import oil.moe.dao.BaseLoginInfoDB;
 import oil.moe.dao.StudentDB;
 import oil.moe.dao.TeacherDB;
-import oil.moe.dto.loginInfo.BaseLoginInfo;
+import oil.moe.dto.loginInfo.User;
 import oil.moe.dto.student.Student;
 import oil.moe.dto.teacher.Teacher;
 import org.junit.jupiter.api.Test;
@@ -41,10 +41,9 @@ public class AddUser {
     @Commit
     public void addUser() {
         loginInfoDB.save(
-                new BaseLoginInfo(
-                        null,
-                        "root",
-                        pe.encode("root"),
+                new User(
+                        "1",
+                        pe.encode("1"),
                         AuthorityUtils.createAuthorityList("ROOT", "USER")));
     }
 

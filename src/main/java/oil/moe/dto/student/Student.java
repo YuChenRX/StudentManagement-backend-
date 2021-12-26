@@ -1,12 +1,14 @@
 package oil.moe.dto.student;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import oil.moe.dto.teacher.Teacher;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "students")
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
-    public Long studentId;
+    public Long id;
     @Column
     public String name;
     @Column
@@ -38,12 +40,11 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "studentId=" + studentId +
+                "studentId=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", score=" + score +
                 ", teacher=" + teacherList +
                 '}';
     }
-
 }
